@@ -1,0 +1,11 @@
+<h2>背景色設定</h2>
+<%= form_for @user_project_color, url: { controller: 'user_project_colors', action: 'create' } do |f| %>
+
+  <%= f.text_field :color, class: 'jscolor', maxlength: 6, size: 12 %>
+  <%= f.submit '保存' %>
+  <%= f.submit 'デフォルトに戻す', name: :back_to_default, class: 'back-to-default' %>
+
+<% end %>
+
+<%= javascript_include_tag('vendor/jscolor-2.0.4/jscolor.min.js', plugin: :project_header_color) %>
+<%= stylesheet_link_tag('user_project_colors.css', plugin: :project_header_color) %>

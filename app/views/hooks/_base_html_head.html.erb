@@ -1,0 +1,11 @@
+<% if session[:user_id].present? and @project.present? %>
+  <% color = UserProjectColors.find_by(user_id: session[:user_id], project_id: @project.id).try(:color) %>
+  <% if color.present? and color != 'FFFFFF' %>
+    <style type="text/css">
+      <!--
+      #top-menu,#header { background-color: <%= "#" + color %>; }
+      #top-menu { border-bottom: 1px solid lightgray; }
+      -->
+    </style>
+  <% end %>
+<% end %>

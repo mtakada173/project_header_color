@@ -1,0 +1,2 @@
+module UserProjectColorsHelper
+end
